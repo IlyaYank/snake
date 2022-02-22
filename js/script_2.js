@@ -11,7 +11,7 @@ ground.src = "img/bg.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
-let k = 100;
+let k = 130;
 
 let box = 32;
 
