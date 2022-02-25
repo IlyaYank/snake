@@ -75,7 +75,7 @@ function Otrisovka(){
 			// ctx.fillStyle = i == 0 ? color_snake[3] : color_snake[Math.floor(Math.random() * 2)];
 			
 			if (i % 2 == 0){
-				ctx.fillStyle = "yellow";
+				ctx.fillStyle = "#ffff33";
 
 				}
 
