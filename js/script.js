@@ -11,7 +11,7 @@ ground.src = "img/bg.png";
 const foodImg = new Image();
 foodImg.src = "img/food.png";
 
-let k = 100;
+let k = 140;
 
 let box = 32;
 
@@ -117,11 +117,11 @@ function Otrisovka(){
 
 
 
-	// if(snakeX < box || snakeX > box * 17 || snakeY < box * 2 || snakeY > box * 16){
-	// 	clearInterval(game);
-	// 	gameover();
+	if(snakeX < box || snakeX > box * 17 || snakeY < box * 2 || snakeY > box * 16){
+		clearInterval(game);
+		gameover();
 
-	// }
+	}
 
 	if(dir == "left") snakeX -= box;
 	if(dir == "right") snakeX += box;
@@ -133,7 +133,7 @@ function Otrisovka(){
 		y: snakeY,
 	};
 
-	// eatTeal(new_head, snake);
+	eatTeal(new_head, snake);
 
 	snake.unshift(new_head);
 
