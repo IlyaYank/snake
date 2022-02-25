@@ -80,12 +80,9 @@ function Otrisovka(){
 				}
 
 			if (i % 2 != 0){
-				ctx.fillStyle = color_snake[1];
+				ctx.fillStyle = "#00ccff";
 				}
 			
-			if (i == 0){
-				ctx.fillStyle = "red";
-			}
 			ctx.fillRect(snake[i].x, snake[i].y, box, box);
 }
 
