@@ -16,7 +16,6 @@ let k = 100;
 let box = 32;
 
 let schote = 0;
-
 let food = {
 	x: Math.floor((Math.random() * 17 + 1)) * box,
 	y: Math.floor((Math.random() * 15 + 2)) * box,
@@ -29,6 +28,7 @@ snake[0] = {
 	y: 10 * box,
 };
 
+let color_snake = ["#0000FF", "#00FFFF", "#008080", "#000080"]
 
 let dir;
 
@@ -70,17 +70,32 @@ function eatTeal(head, arr) {
 function Otrisovka(){
 	ctx.drawImage(ground, 0, 0 );
 	ctx.drawImage(foodImg, food.x, food.y );
-	for(let i = 0; i < snake.length; ++i){
-		ctx.fillStyle = i == 0 ? "red" : "blue";
-		ctx.fillRect(snake[i].x, snake[i].y, box, box);
-	}
+		for(let i = 0; i < snake.length; ++i){	
+			// color_color = Math.floor(Math.random() * 9);
+			// ctx.fillStyle = i == 0 ? color_snake[3] : color_snake[Math.floor(Math.random() * 2)];
+			
+			if (i % 2 == 0){
+				ctx.fillStyle = color_snake[1];
+
+				}
+
+			if (i % 2 != 0){
+				ctx.fillStyle = color_snake[3];
+				}
+			
+			if (i == 0){
+				ctx.fillStyle = "red";
+			}
+			ctx.fillRect(snake[i].x, snake[i].y, box, box);
+}
+
 	ctx.fillStyle = "white";
 	ctx.font = "50px Arial";
 	ctx.fillText(schote, box * 1.5, box * 1.2);
 	let snakeX = snake[0].x;
 	let snakeY = snake[0].y;
 	if(snakeX == food.x && snakeY == food.y){
-		schote++;
+		schote += 100;
 		food = {
 			x: Math.floor((Math.random() * 17 + 1)) * box,
 			y: Math.floor((Math.random() * 15 + 2)) * box,
@@ -102,11 +117,11 @@ function Otrisovka(){
 
 
 
-	if(snakeX < box || snakeX > box * 17 || snakeY < box * 2 || snakeY > box * 16){
-		clearInterval(game);
-		gameover();
+	// if(snakeX < box || snakeX > box * 17 || snakeY < box * 2 || snakeY > box * 16){
+	// 	clearInterval(game);
+	// 	gameover();
 
-	}
+	// }
 
 	if(dir == "left") snakeX -= box;
 	if(dir == "right") snakeX += box;
@@ -118,7 +133,7 @@ function Otrisovka(){
 		y: snakeY,
 	};
 
-	eatTeal(new_head, snake);
+	// eatTeal(new_head, snake);
 
 	snake.unshift(new_head);
 
