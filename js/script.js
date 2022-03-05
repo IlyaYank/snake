@@ -28,7 +28,7 @@ snake[0] = {
 	y: 10 * box,
 };
 
-let color_snake = ["#0000FF", "#00FFFF", "#008080", "#000080"]
+let color_snake = ["red", "black", "white"]
 
 let dir;
 
@@ -75,14 +75,25 @@ function Otrisovka(){
 			// ctx.fillStyle = i == 0 ? color_snake[3] : color_snake[Math.floor(Math.random() * 2)];
 			
 			if (i % 2 == 0){
-				ctx.fillStyle = "#ffff33";
+				ctx.fillStyle = "yellow";
 
 				}
 
 			if (i % 2 != 0){
-				ctx.fillStyle = "#00ccff";
-				}
-			
+				ctx.fillStyle = color_snake[1];}
+			// if ( i == 0){
+			// 	ctx.fillStyle = "white";
+			// }
+			// if ( i == 1){
+			// 	ctx.fillStyle = "blue";
+			// }
+			// if ( i == 2){
+			// 	ctx.fillStyle = "red";
+			// }
+			// if ( i == 3){
+			// 	ctx.fillStyle = "black";
+			// }
+
 			ctx.fillRect(snake[i].x, snake[i].y, box, box);
 }
 
