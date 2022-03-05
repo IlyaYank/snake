@@ -58,7 +58,7 @@ function Close_modal(){
 function eatTeal(head, arr) {
 	for(let i = 0; i < arr.length; i++){
 		if(head.x == arr[i].x && head.y == arr[i].y){
-			clearInterval(game);
+			clearInterval(game);gameover
 			gameover();
 
 		}
@@ -81,6 +81,10 @@ function Otrisovka(){
 
 			if (i % 2 != 0){
 				ctx.fillStyle = color_snake[1];}
+
+			if ( i == 0){
+				ctx.fillStyle = color_snake[2];
+			}
 			// if ( i == 0){
 			// 	ctx.fillStyle = "white";
 			// }
@@ -117,6 +121,9 @@ function Otrisovka(){
 			j = 0;
 			}
 		}
+		// function width_2(){
+		// 	return k + 100;
+		// }
 
 	}
 	else{
